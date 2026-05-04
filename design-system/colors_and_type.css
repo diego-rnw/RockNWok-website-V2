@@ -1,0 +1,329 @@
+/* =========================================================
+   ROCK N' WOK — Colors & Type
+   Bold, contrast-driven, urban. Yellow + black + white,
+   with orange as a deliberate accent.
+   ========================================================= */
+
+/* ---------- FONT FACES ---------- */
+
+/* Monument Extended — display / headlines / logo-feel */
+@font-face {
+  font-family: "Monument Extended";
+  src: url("fonts/MonumentExtended-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Monument Extended";
+  src: url("fonts/MonumentExtended-Ultrabold.otf") format("opentype");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Gotham — UI / body / supporting type */
+@font-face {
+  font-family: "Gotham";
+  src: url("fonts/Gotham-Light.otf") format("opentype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Gotham";
+  src: url("fonts/Gotham-LightItalic.otf") format("opentype");
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Gotham";
+  src: url("fonts/Gotham-Book.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Gotham";
+  src: url("fonts/Gotham-BookItalic.otf") format("opentype");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Gotham";
+  src: url("fonts/Gotham-Medium.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Gotham";
+  src: url("fonts/Gotham-Bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Gotham";
+  src: url("fonts/Gotham-BoldItalic.otf") format("opentype");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Gotham";
+  src: url("fonts/Gotham-BlackItalic.otf") format("opentype");
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+:root {
+  /* =========================================================
+     CORE PALETTE
+     ========================================================= */
+
+  /* Primary — yellow is the brand. High visibility, energy. */
+  --rnw-yellow:        #FFD60A;   /* signature yellow, used in logo dash */
+  --rnw-yellow-warm:   #FFC107;   /* slightly amber for hover / press */
+  --rnw-yellow-soft:   #FFE875;   /* tints, highlights */
+
+  /* Base */
+  --rnw-black:         #0A0A0A;   /* deep, almost-true black */
+  --rnw-ink:           #1A1A1A;   /* surface elevation 1 on black */
+  --rnw-ink-2:         #262626;   /* surface elevation 2 on black */
+  --rnw-white:         #FFFFFF;
+  --rnw-bone:          #F7F4ED;   /* warm off-white, paper feel */
+
+  /* Neutrals (for borders, captions on light bg) */
+  --rnw-gray-100:      #ECECEC;
+  --rnw-gray-200:      #D6D6D6;
+  --rnw-gray-400:      #8C8C8C;
+  --rnw-gray-600:      #4D4D4D;
+  --rnw-gray-800:      #1F1F1F;
+
+  /* Accent — orange. Used sparingly, with intent. */
+  --rnw-orange:        #FF6A1A;
+  --rnw-orange-deep:   #E04E00;
+
+  /* Semantic */
+  --rnw-success:       #2BB673;
+  --rnw-warning:       var(--rnw-yellow);
+  --rnw-danger:        #E63946;
+
+  /* =========================================================
+     SEMANTIC TOKENS — light surface (bone/white)
+     ========================================================= */
+  --bg:                var(--rnw-bone);
+  --bg-alt:            var(--rnw-white);
+  --surface:           var(--rnw-white);
+  --surface-raised:    var(--rnw-white);
+
+  --fg:                var(--rnw-black);
+  --fg-1:              var(--rnw-black);
+  --fg-2:              var(--rnw-gray-600);
+  --fg-3:              var(--rnw-gray-400);
+  --fg-inverse:        var(--rnw-white);
+
+  --border:            var(--rnw-gray-200);
+  --border-strong:     var(--rnw-black);
+
+  --accent:            var(--rnw-yellow);
+  --accent-fg:         var(--rnw-black);     /* what goes ON yellow */
+  --accent-2:          var(--rnw-orange);
+  --accent-2-fg:       var(--rnw-white);
+
+  /* =========================================================
+     TYPE SYSTEM
+     ========================================================= */
+  --font-display: "Monument Extended", "Arial Black", "Helvetica Neue", sans-serif;
+  --font-sans:    "Gotham", "Helvetica Neue", "Inter", system-ui, sans-serif;
+  --font-mono:    ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+
+  /* Weights */
+  --fw-light:    300;
+  --fw-book:     400;
+  --fw-medium:   500;
+  --fw-bold:     700;
+  --fw-black:    900;
+
+  /* Type scale (designed for 1920 slides + 16px web base) */
+  --fs-hero:     clamp(64px, 9vw, 180px);   /* portada / cover hero */
+  --fs-display:  clamp(48px, 6vw, 112px);   /* big concept titles */
+  --fs-h1:       clamp(40px, 4.5vw, 80px);
+  --fs-h2:       clamp(32px, 3.2vw, 56px);
+  --fs-h3:       clamp(24px, 2.2vw, 36px);
+  --fs-h4:       20px;
+  --fs-lead:     22px;
+  --fs-body:     16px;
+  --fs-small:    14px;
+  --fs-caption:  12px;
+  --fs-eyebrow:  13px;
+
+  /* Line height */
+  --lh-tight:    0.92;
+  --lh-snug:     1.05;
+  --lh-normal:   1.35;
+  --lh-relaxed:  1.6;
+
+  /* Tracking */
+  --ls-tight:    -0.02em;
+  --ls-normal:   0;
+  --ls-wide:     0.08em;
+  --ls-eyebrow:  0.18em;
+
+  /* =========================================================
+     SHAPE / SPACE / MOTION
+     ========================================================= */
+  --r-0:   0px;        /* default — RNW is hard-edged */
+  --r-1:   2px;
+  --r-2:   4px;
+  --r-pill: 999px;
+
+  --space-1:  4px;
+  --space-2:  8px;
+  --space-3:  12px;
+  --space-4:  16px;
+  --space-5:  24px;
+  --space-6:  32px;
+  --space-7:  48px;
+  --space-8:  64px;
+  --space-9:  96px;
+  --space-10: 128px;
+
+  --shadow-sm: 0 2px 0 0 var(--rnw-black);
+  --shadow-md: 0 4px 0 0 var(--rnw-black);   /* hard offset shadow, no blur */
+  --shadow-lg: 0 8px 0 0 var(--rnw-black);
+
+  --ease-out:    cubic-bezier(0.2, 0.8, 0.2, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-fast:    120ms;
+  --dur-base:    200ms;
+  --dur-slow:    320ms;
+
+  /* Slide aspect */
+  --slide-w: 1920px;
+  --slide-h: 1080px;
+}
+
+/* Dark surface override — apply by adding class="theme-dark" */
+.theme-dark {
+  --bg:             var(--rnw-black);
+  --bg-alt:         var(--rnw-ink);
+  --surface:        var(--rnw-ink);
+  --surface-raised: var(--rnw-ink-2);
+
+  --fg:             var(--rnw-white);
+  --fg-1:           var(--rnw-white);
+  --fg-2:           var(--rnw-gray-200);
+  --fg-3:           var(--rnw-gray-400);
+  --fg-inverse:     var(--rnw-black);
+
+  --border:         var(--rnw-ink-2);
+  --border-strong:  var(--rnw-white);
+
+  --shadow-sm: 0 2px 0 0 var(--rnw-yellow);
+  --shadow-md: 0 4px 0 0 var(--rnw-yellow);
+  --shadow-lg: 0 8px 0 0 var(--rnw-yellow);
+}
+
+/* Yellow surface override — for portada/cover slides */
+.theme-yellow {
+  --bg:             var(--rnw-yellow);
+  --bg-alt:         var(--rnw-yellow-warm);
+  --surface:        var(--rnw-yellow);
+  --surface-raised: var(--rnw-yellow-warm);
+
+  --fg:             var(--rnw-black);
+  --fg-1:           var(--rnw-black);
+  --fg-2:           var(--rnw-gray-800);
+  --fg-3:           var(--rnw-gray-600);
+  --fg-inverse:     var(--rnw-white);
+
+  --border:         var(--rnw-black);
+  --border-strong:  var(--rnw-black);
+}
+
+/* =========================================================
+   ELEMENT DEFAULTS
+   ========================================================= */
+html { font-family: var(--font-sans); color: var(--fg-1); background: var(--bg); }
+body { font-family: var(--font-sans); font-weight: var(--fw-book); font-size: var(--fs-body); line-height: var(--lh-normal); color: var(--fg-1); background: var(--bg); }
+
+h1, .h1 {
+  font-family: var(--font-display);
+  font-weight: var(--fw-black);
+  font-size: var(--fs-h1);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--ls-tight);
+  text-transform: uppercase;
+  margin: 0;
+}
+h2, .h2 {
+  font-family: var(--font-display);
+  font-weight: var(--fw-black);
+  font-size: var(--fs-h2);
+  line-height: var(--lh-snug);
+  letter-spacing: var(--ls-tight);
+  text-transform: uppercase;
+  margin: 0;
+}
+h3, .h3 {
+  font-family: var(--font-sans);
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-h3);
+  line-height: var(--lh-snug);
+  text-transform: uppercase;
+  margin: 0;
+}
+h4, .h4 {
+  font-family: var(--font-sans);
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-h4);
+  line-height: var(--lh-normal);
+  text-transform: uppercase;
+  letter-spacing: var(--ls-wide);
+  margin: 0;
+}
+p, .p {
+  font-family: var(--font-sans);
+  font-weight: var(--fw-book);
+  font-size: var(--fs-body);
+  line-height: var(--lh-relaxed);
+  margin: 0;
+}
+.lead {
+  font-size: var(--fs-lead);
+  font-weight: var(--fw-light);
+  line-height: var(--lh-normal);
+}
+.eyebrow {
+  font-family: var(--font-sans);
+  font-size: var(--fs-eyebrow);
+  font-weight: var(--fw-bold);
+  text-transform: uppercase;
+  letter-spacing: var(--ls-eyebrow);
+  color: var(--fg-2);
+}
+.display {
+  font-family: var(--font-display);
+  font-weight: var(--fw-black);
+  font-size: var(--fs-display);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--ls-tight);
+  text-transform: uppercase;
+}
+.hero {
+  font-family: var(--font-display);
+  font-weight: var(--fw-black);
+  font-size: var(--fs-hero);
+  line-height: var(--lh-tight);
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+}
+code, kbd, pre, samp { font-family: var(--font-mono); font-size: 0.92em; }
+
+/* Selection — yellow highlight */
+::selection { background: var(--rnw-yellow); color: var(--rnw-black); }
