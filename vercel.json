@@ -1,12 +1,16 @@
 {
   "version": 2,
   "public": false,
-  "buildCommand": "npm run build || true",
-  "outputDirectory": ".",
+  "builds": [
+    {
+      "src": "server.js",
+      "use": "@vercel/node"
+    }
+  ],
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "/index.html"
+      "dest": "server.js"
     }
   ],
   "headers": [
